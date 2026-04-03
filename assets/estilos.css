@@ -1,0 +1,31 @@
+.Maggilu{
+    display: inline-block;
+    margin: 15px;
+    width: 185px;
+    vertical-align: top;
+    
+}
+.Maggilu img{
+    border: 5px solid black;
+}
+
+.arreglos{
+    font-style: italic;
+    color: #5E2145;
+}
+
+.wsp{
+    color: #33d951;
+}
+
+.instagram{
+    color: #b92db8;
+}
+
+p{
+    font-style: italic;
+}
+
+li{
+    font-style: italic;
+}
