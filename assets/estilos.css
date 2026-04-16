@@ -120,4 +120,31 @@ body {
 }
 
 
+/* ========== CARRUSEL ========== */
+.carrusel-contenedor {
+    overflow: hidden;
+    width: 100%;
+    padding: 20px 0;
+}
 
+.carrusel {
+    display: flex;
+    gap: 30px;
+    animation: desplazar 30s linear infinite;
+    width: max-content;
+}
+
+.carrusel:hover {
+    animation-play-state: paused;
+}
+
+.carrusel .tarjeta {
+    display: block;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+@keyframes desplazar {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
