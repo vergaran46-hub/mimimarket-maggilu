@@ -9,14 +9,17 @@
 .arreglos {
     font-style: italic;
     color: #5E2145;
-    font-size: 35px;
+    font-size: 45px;
+    text-align: center;
+    margin: 5px;
 }
 
 .negocio {
     font-style: italic;
-    font-size: 35px;
+    font-size: 45px;
     margin: 5px;
     color: #5E2145;
+    text-align: center;
 
 }
 
@@ -39,22 +42,33 @@
 
 p {
     font-family: sans-serif;
-    font-size: 15px;
+    font-size: 20px;
     line-height: 1.5;
     margin: 2px 5px;
+    text-align: center;
 }
 
 li {
     font-family: 'open sans', sans-serif;
-    font-size: 15px;
+    font-size: 20px;
     line-height: 1.2;
 }
 
 .rosas {
-    max-width: 800px;
-    margin-top: 40px;
-
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0 20px;
+    text-align: center;
+}
+
+.rosas ul{
+    display: inline-block;
+    text-align: left;
+}
+
+.rosas li {
+    margin-bottom: 7px;
 }
 
 .tarjeta {
@@ -116,8 +130,19 @@ body {
 
 .logos img {
     display: inline-block;
-    margin: 0 100px;
+    margin: 5px;
     vertical-align: middle;
+    width: 350px;
+    height: 150px;
+    object-fit: contain;
+    padding-top: 0;
+    
+}
+
+.logos {
+    text-align: center; 
+    padding: 5px;
+    margin: 5px;
 }
 
 
