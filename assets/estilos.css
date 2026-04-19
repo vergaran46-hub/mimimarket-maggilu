@@ -411,3 +411,44 @@ body {
     font-family: sans-serif;
     font-weight: bold;
 }
+
+.mision-vision {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.tarjeta-info {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 450px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-info:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta-info h3 {
+    color: #5E2145;
+    font-family: sans-serif;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #d0a3bf;
+    padding-bottom: 10px;
+}
+
+.tarjeta-info p {
+    color: #333;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0;
+}
