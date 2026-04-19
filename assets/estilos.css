@@ -315,6 +315,7 @@ body {
 
 
 
+
 .medios-pago {
     margin-top: 30px;
     padding-bottom: 20px;
@@ -331,20 +332,19 @@ body {
 .iconos-pago {
     display: flex;
     justify-content: center;
-    gap: 40px; 
+    gap: 35px; 
     flex-wrap: wrap;
 }
 
 .pago-item {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     gap: 8px;
-    opacity: 0.7;
+    opacity: 0.8;
     transition: all 0.3s ease;
     cursor: default;
 }
-
 
 .pago-item:hover {
     opacity: 1;
@@ -352,12 +352,12 @@ body {
 }
 
 .pago-item svg {
-    width: 35px;
-    height: 35px;
+    width: 38px;
+    height: 38px;
 }
 
 .pago-item span {
-    font-size: 14px;
+    font-size: 13px;
     font-family: sans-serif;
     font-weight: bold;
 }
