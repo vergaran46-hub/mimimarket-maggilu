@@ -307,3 +307,52 @@ body {
 #r8:checked ~ .carrusel-track .tarjeta:nth-child(8) {
     opacity: 1;
 }
+
+
+
+.medios-pago {
+    margin-top: 30px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: #331828; 
+}
+
+.medios-pago p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.iconos-pago {
+    display: flex;
+    justify-content: center;
+    gap: 40px; 
+    flex-wrap: wrap;
+}
+
+.pago-item {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 8px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+
+.pago-item:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+.pago-item svg {
+    width: 35px;
+    height: 35px;
+}
+
+.pago-item span {
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
