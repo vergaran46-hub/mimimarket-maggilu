@@ -201,13 +201,11 @@ li {
 .tarjeta {
     width: 250px;
     display: inline-block;
-    text-align: left;
     margin: 60px;
     background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
     overflow: hidden;
-    vertical-align: top;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
 }
 
 .imagenTarjeta {
