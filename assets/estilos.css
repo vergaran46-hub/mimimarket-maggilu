@@ -200,13 +200,30 @@ li {
 
 .tarjeta {
     width: 250px;
-    display: inline-block;
-    margin: 60px;
     background-color: white;
     border-radius: 8px;
     overflow: hidden;
+    margin: 60px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease;
 }
+
+.tarjeta:hover {
+    transform: scale(1.10);
+}
+
+.tarjeta p {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.tarjeta:hover p {
+    opacity: 1; 
+}
+
 
 .imagenTarjeta {
     position: relative;
@@ -224,6 +241,20 @@ body {
     display: block;
     border: none;
 }
+
+.cuadros#arreglos {
+    background-color: #d0a3bf;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    scroll-margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+
 
 .cuadros {
     background-color: #d0a3bf;
@@ -339,8 +370,9 @@ body {
 }
 
 .tarjeta-info:hover {
-    transform: translateY(-5px);
+    transform: scale(1.10);
 }
+
 
 .tarjeta-info h3 {
     color: #5E2145;
@@ -359,6 +391,12 @@ body {
     line-height: 1.6;
     text-align: justify;
     margin: 0;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.tarjeta-info:hover p{
+    opacity: 1;
 }
 
 .contenedor-texto {
@@ -387,7 +425,7 @@ body {
 }
 
 .producto-almacen:hover {
-    transform: translateY(-5px);
+    transform: translateY(-15px) scale(1.15);
 }
 
 .producto-almacen img {
@@ -408,4 +446,10 @@ body {
     color: #333;
     font-size: 16px;
     margin: 5px 15px 15px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.producto-almacen:hover p {
+    opacity: 1;
 }
