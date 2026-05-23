@@ -22,6 +22,11 @@
             <li><a href="#arreglos">Maggilu</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
+
+        <input type="search" id="buscadorProductos" class="nav-buscador" placeholder="Buscar producto..."
+            aria-label="Buscar producto">
+
+        <button id="btnModoOscuro" class="btn-modo-oscuro" aria-label="Activar modo oscuro"></button>
     </nav>
     <main>
 
@@ -74,7 +79,7 @@
                 <p>Todo lo básico que tu hogar necesita, siempre a mano.</p>
             </div>
 
-            <div class="grilla-productos">
+            <div class="grilla-productos" id="contenedorProductos">
                 <article class="producto-almacen">
                     <img src="img/abarrotes.webp" alt="Mercadería" loading="lazy">
                     <h3>Mercadería</h3>
@@ -101,7 +106,7 @@
                 <p>Ese gustito de media tarde que no puede faltar.</p>
             </div>
 
-            <div class="grilla-productos">
+            <div class="grilla-productos" id="contenedorAntojos">
                 <article class="producto-almacen">
                     <img src="img/Foto 1.jpg" alt="Bebidas frías" loading="lazy">
                     <h3>Bebidas Frías</h3>
@@ -160,7 +165,7 @@
                 <input type="radio" name="slider" id="r7">
                 <input type="radio" name="slider" id="r8">
 
-            <div class="carrusel-track">
+                <div class="carrusel-track">
                     <div class="tarjeta">
                         <div class="imagenTarjeta">
                             <img src="img/Dia de los enamorados.jpg" alt="Día de los enamorados" loading="lazy">
@@ -241,33 +246,33 @@
                             <p>¡El conejito ya llegó a MaggiLu! Celebra esta dulce fecha con una hermosa presentación...
                             </p>
                         </div>
+                    </div>
+
                 </div>
+                <div class="controles">
+                    <label for="r8" class="flecha prev f1">&#10094;</label>
+                    <label for="r2" class="flecha next f1">&#10095;</label>
 
-            </div>
-            <div class="controles">
-                <label for="r8" class="flecha prev f1">&#10094;</label>
-                <label for="r2" class="flecha next f1">&#10095;</label>
+                    <label for="r1" class="flecha prev f2">&#10094;</label>
+                    <label for="r3" class="flecha next f2">&#10095;</label>
 
-                <label for="r1" class="flecha prev f2">&#10094;</label>
-                <label for="r3" class="flecha next f2">&#10095;</label>
+                    <label for="r2" class="flecha prev f3">&#10094;</label>
+                    <label for="r4" class="flecha next f3">&#10095;</label>
 
-                <label for="r2" class="flecha prev f3">&#10094;</label>
-                <label for="r4" class="flecha next f3">&#10095;</label>
+                    <label for="r3" class="flecha prev f4">&#10094;</label>
+                    <label for="r5" class="flecha next f4">&#10095;</label>
 
-                <label for="r3" class="flecha prev f4">&#10094;</label>
-                <label for="r5" class="flecha next f4">&#10095;</label>
+                    <label for="r4" class="flecha prev f5">&#10094;</label>
+                    <label for="r6" class="flecha next f5">&#10095;</label>
 
-                <label for="r4" class="flecha prev f5">&#10094;</label>
-                <label for="r6" class="flecha next f5">&#10095;</label>
+                    <label for="r5" class="flecha prev f6">&#10094;</label>
+                    <label for="r7" class="flecha next f6">&#10095;</label>
 
-                <label for="r5" class="flecha prev f6">&#10094;</label>
-                <label for="r7" class="flecha next f6">&#10095;</label>
+                    <label for="r6" class="flecha prev f7">&#10094;</label>
+                    <label for="r8" class="flecha next f7">&#10095;</label>
 
-                <label for="r6" class="flecha prev f7">&#10094;</label>
-                <label for="r8" class="flecha next f7">&#10095;</label>
-
-                <label for="r7" class="flecha prev f8">&#10094;</label>
-                <label for="r1" class="flecha next f8">&#10095;</label>
+                    <label for="r7" class="flecha prev f8">&#10094;</label>
+                    <label for="r1" class="flecha next f8">&#10095;</label>
 
         </section>
     </main>
@@ -314,6 +319,7 @@
 
         </div>
     </footer>
+    <script src="assets/js/index.js"></script>
 </body>
 
 </html>
