@@ -840,3 +840,54 @@ li {
     padding: 30px;
     font-family: sans-serif;
 }
+
+.division {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.caja {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    color: #331828;
+}
+
+.tituloCaja {
+    color: #5E2145;
+    margin-top: 0;
+    border-bottom: 2px solid #d0a3bf;
+    padding-bottom: 10px;
+}
+
+.inputBuscador {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #d0a3bf;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.tablaMini {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.tablaMini th {
+    background-color: #5E2145;
+    color: white;
+    padding: 10px;
+}
+
+.tablaMini td {
+    padding: 8px;
+}
+
+.totalTexto {
+    text-align: right;
+    font-size: 24px;
+    color: #5E2145;
+}

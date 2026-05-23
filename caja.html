@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIMImarket</title>
+    <title>Caja Principal - MIMImarket</title>
     <link href="assets/css/estilos.css" rel="stylesheet">
     <script src="assets/js/caja.js"></script>
 </head>
 <body>
+
     <nav class="menuIzquierda">
         <h2 class="menu">MIMImarket</h2>
 
@@ -15,16 +15,51 @@
             <li><a href="caja.html">Caja Principal</a></li>
             <li><a href="deudores.html">Deudores</a></li>
             <li><a href="inventario.html">Inventario</a></li>
+            <li><a href="historial.html">Historial</a></li>
         </ul>
+    </nav> 
+    
+    <main class="contenido">
+        <div class="division">
 
-        <main class="contenido">
-            <h1>Bienvenida a la Caja</h1>
-            <p>Aquí irá el sistema que programarás con JavaScript...</p>
+            <div class="caja">
+                <h2 class="tituloCaja">Catalogo rapido</h2>
+                <input type="text" id="iBuscador" placeholder="Buscar Producto" class="inputBuscador"><br><br>
 
-        </main>
+                <table border="1" class="tablaMini">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Agregar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaInventario"></tbody>
+                </table>
+            </div>
 
+            <div class="caja">
+                <h2 class="tituloCaja">Boleta del Cliente</h2>
 
+                <table border="1" class="tablaMini">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaCarrito"></tbody>
+                </table>
 
-    </nav>
+                <h3 class="totalTexto">Total a Pagar: $<span id="totalPagar">0</span></h3>
+                <button onclick="vaciarBoleta()" class="btnMini" style="background-color: #cc0000;">Vaciar Boleta</button>
+                <button id="btnFinalizar" class="btnMini">Finalizar venta</button>
+            </div>
+
+        </div>
+    </main>
+
 </body>
 </html>
