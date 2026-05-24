@@ -11,35 +11,51 @@ let carrito = [];
 
 window.onload = () => {
 
-    let textoGuardado = localStorage.getItem("boletaTemporal");
-    let carritoGuardado = JSON.parse(textoGuardado);
+    // 1. Lógica del Menú Hamburguesa (Funciona en las 4 páginas del panel)
+    let btnHamburguesaDash = document.getElementById("btnHamburguesaDash");
+    let menuIzquierda = document.querySelector(".menuIzquierda");
 
-    if (carritoGuardado != null) {
-        carrito = carritoGuardado;
-    } else {
-        carrito = [];
+    if (btnHamburguesaDash && menuIzquierda) {
+        btnHamburguesaDash.addEventListener("click", () => {
+            menuIzquierda.classList.toggle("menu-activo");
+        });
     }
 
-    cargarCatalogo();
-    actualizarBoleta();
+    // 2. Lógica del Punto de Venta / Boleta (Solo se ejecuta si existe la tabla en el HTML)
+    let tablaInventario = document.getElementById("tablaInventario");
+    
+    if (tablaInventario) {
+        let textoGuardado = localStorage.getItem("boletaTemporal");
+        let carritoGuardado = JSON.parse(textoGuardado);
 
-    let btnFinalizar = document.getElementById("btnFinalizar");
-
-    btnFinalizar.addEventListener("click", () => {
-        if (carrito.length > 0) {
-            alert("Venta exitosa");
-            carrito = [];
-            localStorage.removeItem("boletaTemporal");
-            actualizarBoleta();
+        if (carritoGuardado != null) {
+            carrito = carritoGuardado;
         } else {
-            alert("No hay productos");
+            carrito = [];
         }
-    });
 
+        cargarCatalogo();
+        actualizarBoleta();
+
+        let btnFinalizar = document.getElementById("btnFinalizar");
+        if (btnFinalizar) {
+            btnFinalizar.addEventListener("click", () => {
+                if (carrito.length > 0) {
+                    alert("Venta exitosa");
+                    carrito = [];
+                    localStorage.removeItem("boletaTemporal");
+                    actualizarBoleta();
+                } else {
+                    alert("No hay productos");
+                }
+            });
+        }
+    }
 };
 
 function cargarCatalogo() {
     let tablaInventario = document.getElementById("tablaInventario");
+    if (!tablaInventario) return;
 
     let filasHTML = inventario.map((producto, index) => {
         return "<tr>" +  "<td>" + producto.nombre + "</td>" + "<td>$" + producto.precio + "</td>" + "<td>" + producto.cantidad + "</td>" + "<td><button onclick='agregarAlCarrito(" + index + ")'>+</button></td>" + "</tr>";
@@ -60,6 +76,8 @@ function agregarAlCarrito(posicion) {
 function actualizarBoleta() {
     let tablaCarrito = document.getElementById("tablaCarrito");
     let totalPagar = document.getElementById("totalPagar");
+    if (!tablaCarrito || !totalPagar) return;
+
     let sumaTotal = 0;
 
     let filasCarrito = carrito.map((producto, index) => {
@@ -72,22 +90,14 @@ function actualizarBoleta() {
     totalPagar.innerHTML = sumaTotal;
 }
 
-
 function eliminarUno(posicion) {
-
     carrito.splice(posicion, 1);
-    
     localStorage.setItem("boletaTemporal", JSON.stringify(carrito));
-    
     actualizarBoleta();
 }
 
 function vaciarBoleta() {
-
     carrito = [];
-
     localStorage.removeItem("boletaTemporal");
-
     actualizarBoleta();
-
 }
