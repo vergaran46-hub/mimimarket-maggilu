@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventario - MIMImarket</title>
     <link href="assets/css/estilos.css" rel="stylesheet">
-    <script src="assets/js/caja.js"></script>
 </head>
 <body>
     <button id="btnHamburguesaDash" class="btn-hamburguesa-dash">&#9776;</button>
@@ -19,11 +18,49 @@
             <li><a href="inventario.html">Inventario</a></li>
             <li><a href="historial.html">Historial</a></li>
         </ul>
+        <button id="btnModoOscuro" class="btn-modo-oscuro" aria-label="Activar modo oscuro"></button>
     </nav>
 
     <main class="contenido">
-        <h1>Bienvenida al inventario</h1>
-        <p>Aquí irá el sistema que programarás con JavaScript...</p>
+        <h1 class="tituloSeccion">Gestión de Inventario</h1>
+
+        <div class="division">
+
+            <div class="caja">
+                <h2 class="tituloCaja">Agregar Producto</h2>
+
+                <label>Nombre:</label><br>
+                <input type="text" id="iNombre" placeholder="Ej: Arroz" class="inputBuscador"><br><br>
+
+                <label>Precio:</label><br>
+                <input type="number" id="iPrecio" placeholder="Ej: 1350" class="inputBuscador"><br><br>
+
+                <label>Stock:</label><br>
+                <input type="number" id="iStock" placeholder="Ej: 10" class="inputBuscador"><br><br>
+
+                <button id="btnAgregarProducto" class="btnMini">Agregar Producto</button>
+            </div>
+
+            <div class="caja">
+                <h2 class="tituloCaja">Productos Registrados</h2>
+
+                <table border="1" class="tablaMini">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaProductos"></tbody>
+                </table>
+            </div>
+
+        </div>
     </main>
+
+    <script src="assets/js/inventario.js" defer></script>
+    <script src="assets/js/modoOscuro.js" defer></script>
 </body>
-</html>
+</html>
