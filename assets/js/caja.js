@@ -11,7 +11,7 @@ let carrito = [];
 
 window.onload = () => {
 
-    // 1. Lógica del Menú Hamburguesa (Funciona en las 4 páginas del panel)
+    // 1. Lógica del Menú Hamburguesa)
     let btnHamburguesaDash = document.getElementById("btnHamburguesaDash");
     let menuIzquierda = document.querySelector(".menuIzquierda");
 
@@ -19,9 +19,46 @@ window.onload = () => {
         btnHamburguesaDash.addEventListener("click", () => {
             menuIzquierda.classList.toggle("menu-activo");
         });
+    
+
+    // VALIDACIÓN DE FORMULARIO Y PROTECCIÓN ANTI-XSS
+    let formAdmin = document.getElementById("formAdmin");
+
+    if (formAdmin) {
+        formAdmin.addEventListener("submit", (evento) => {
+            evento.preventDefault();
+
+            let nombre = document.getElementById("fNombre").value.trim();
+            let correo = document.getElementById("fCorreo").value.trim();
+            let mensaje = document.getElementById("fMensaje").value.trim();
+            let mensajeAlerta = document.getElementById("mensajeAlerta");
+
+            let regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            mensajeAlerta.textContent = "";
+
+            if (nombre === "" || correo === "" || mensaje === "") {
+                mensajeAlerta.style.color = "red";
+                mensajeAlerta.textContent = "Error: Todos los campos son obligatorios.";
+                return;
+            }
+
+            if (!regexCorreo.test(correo)) {
+                mensajeAlerta.style.color = "red";
+                mensajeAlerta.textContent = "Error: Debes ingresar un correo electrónico válido.";
+                return;
+            }
+
+            mensajeAlerta.style.color = "green";
+            
+            mensajeAlerta.textContent = "¡Registro exitoso! El cliente " + nombre + " ha sido ingresado al sistema.";
+
+            formAdmin.reset();
+        });
+    }    
     }
 
-    // 2. Lógica del Punto de Venta / Boleta (Solo se ejecuta si existe la tabla en el HTML)
+    // 2. Lógica del Punto de Venta / Boleta 
     let tablaInventario = document.getElementById("tablaInventario");
     
     if (tablaInventario) {

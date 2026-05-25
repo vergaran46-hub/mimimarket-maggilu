@@ -1063,14 +1063,14 @@ body.dark-mode .aviso-sin-resultados {
 
 
 /* =========================================================
-   MENÚ HAMBURGUESA PARA EL PANEL DE ADMINISTRACIÓN
-   ========================================================= */
+  MENÚ HAMBURGUESA PARA EL PANEL DE ADMINISTRACIÓN 
+========================================================= */
+
 .btn-hamburguesa-dash {
-    display: none; /* Oculto por defecto en computadoras */
+    display: none; 
 }
 
 @media screen and (max-width: 768px) {
-    /* Botón flotante para desplegar el menú */
     .btn-hamburguesa-dash {
         display: block;
         position: fixed;
@@ -1083,35 +1083,31 @@ body.dark-mode .aviso-sin-resultados {
         font-size: 22px;
         border-radius: 5px;
         cursor: pointer;
-        z-index: 2001; /* Asegura que quede por encima del menú lateral */
+        z-index: 2001; 
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
     }
 
-    /* Esconder el menú lateral hacia la izquierda fuera de la pantalla */
     .menuIzquierda {
         left: -260px;
         transition: left 0.3s ease;
         z-index: 2000;
     }
 
-    /* Clase que añadirá JavaScript para mostrar el menú lateral */
     .menuIzquierda.menu-activo {
         left: 0;
     }
 
-    /* Reajuste del área de contenido en celulares */
     .contenido {
-        margin-left: 0 !important; /* Elimina el margen fijo de 260px */
-        padding-top: 70px !important; /* Deja espacio superior para el botón flotante */
+        margin-left: 0 !important; 
+        padding-top: 70px !important; 
     }
 
-    /* Adaptar la cuadrícula de la caja a una sola columna vertical */
     .division {
         flex-direction: column;
         gap: 20px;
     }
 
     .caja {
-        width: 100% !important; /* Las tablas ocuparán todo el ancho disponible */
+        width: 100% !important;
     }
 }

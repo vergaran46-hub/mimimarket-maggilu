@@ -21,9 +21,24 @@
         </ul>
     </nav>    
         <main class="contenido">
-            <h1>Bienvenida a Deudores</h1>
-            <p>Aquí irá el sistema que programarás con JavaScript...</p>
+            <div class="caja" style="width: 100%; max-width: 600px;">
+                <h2 class="tituloCaja">Registrar Nuevo Cliente / Deudor</h2>
+                
+                <form id="formAdmin">
+                    <label style="color: #5E2145; font-weight: bold;">Nombre Completo:</label><br>
+                    <input type="text" id="fNombre" class="inputBuscador" placeholder="Ej: Juan Pérez"><br><br>
 
+                    <label style="color: #5E2145; font-weight: bold;">Correo Electrónico:</label><br>
+                    <input type="text" id="fCorreo" class="inputBuscador" placeholder="ejemplo@correo.com"><br><br>
+
+                    <label style="color: #5E2145; font-weight: bold;">Detalle de la Deuda / Mensaje:</label><br>
+                    <textarea id="fMensaje" class="inputBuscador" rows="4" placeholder="Ingresa los detalles aquí..."></textarea><br><br>
+
+                    <button type="submit" class="btnMini" style="background-color: #5E2145; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Guardar Registro</button>
+                    
+                    <p id="mensajeAlerta" style="margin-top: 15px; font-weight: bold; font-family: sans-serif;"></p>
+                </form>
+            </div>
         </main>
 
 
