@@ -962,6 +962,17 @@ li {
     transform: rotate(20deg) scale(1.1);
 }
 
+.menuIzquierda .btn-modo-oscuro {
+    margin: auto auto 0 auto;
+}
+
+.btn-modo-oscuro-flotante {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin: 0;
+}
+
 
 /* =========================================================
    MODO OSCURO — body.dark-mode (Tarea 6)
