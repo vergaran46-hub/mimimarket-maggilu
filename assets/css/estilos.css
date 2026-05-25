@@ -481,6 +481,13 @@ li {
         padding: 15px 20px;
     }
 
+    .tablaMini {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
     .nav-links {
         flex-wrap: wrap;
         justify-content: center;
@@ -880,6 +887,8 @@ li {
     width: 100%;
     text-align: center;
     border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .tablaMini th {
@@ -901,7 +910,7 @@ li {
 <<<<<<< Updated upstream
 
 /* =========================================================
-   BUSCADOR EN NAVBAR (Tarea 4)
+BUSCADOR EN NAVBAR (Tarea 4)
    ========================================================= */
 
 .nav-buscador {
@@ -938,8 +947,8 @@ li {
 
 
 /* =========================================================
-   BOTÓN MODO OSCURO (Tarea 6)
-   ========================================================= */
+BOTÓN MODO OSCURO (Tarea 6)
+========================================================= */
 
 .btn-modo-oscuro {
     background: none;
@@ -1082,7 +1091,7 @@ body.dark-mode .aviso-sin-resultados {
 
 
 /* =========================================================
-   MENÚ HAMBURGUESA PARA EL PANEL DE ADMINISTRACIÓN
+MENÚ HAMBURGUESA PARA EL PANEL DE ADMINISTRACIÓN
    ========================================================= */
 .btn-hamburguesa-dash {
     display: none; /* Oculto por defecto en computadoras */
@@ -1147,7 +1156,7 @@ body.dark-mode .aviso-sin-resultados {
 }
 
 /* =========================================================
-   MODO OSCURO — Panel de Caja / Dashboard (Tarea 6)
+MODO OSCURO — Panel de Caja / Dashboard (Tarea 6)
    ========================================================= */
 
 body.dark-mode .menuIzquierda {
@@ -1259,4 +1268,41 @@ body.dark-mode .tarjeta-login input {
 
 body.dark-mode .btn-hamburguesa-dash {
     background-color: #5E2145;
+}
+
+
+.tarjetaHistorial {
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .tarjetaHistorial {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+
+.btnMini {
+    background-color: #5E2145;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btnMini:hover{
+    background-color: #d0a3bf;
+    color: #331828;
+    transform: scale(1.05);
+}
+
+.btnMini.rojo {
+    background-color: #dc3545;
+}
+
+.btnMini.rojo:hover {
+    background-color: #c82333;
+    color: white;
 }
