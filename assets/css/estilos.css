@@ -892,6 +892,7 @@ li {
     color: #5E2145;
 }
 
+<<<<<<< Updated upstream
 
 /* =========================================================
    BUSCADOR EN NAVBAR (Tarea 4)
@@ -1114,4 +1115,15 @@ body.dark-mode .aviso-sin-resultados {
     .caja {
         width: 100% !important; /* Las tablas ocuparán todo el ancho disponible */
     }
+=======
+.tituloSeccion {
+    color: #5E2145;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.contenedorDatos {
+    padding: 20px;
+    width: 100%;
+>>>>>>> Stashed changes
 }
