@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIMImarket</title>
+    <title>MIMImarket - Deudores</title>
     <link href="assets/css/estilos.css" rel="stylesheet">
     <script src="assets/js/deudores.js"></script>
 </head>
@@ -20,34 +20,36 @@
             <li><a href="historial.html">Historial</a></li>
         </ul>
         <button id="btnModoOscuro" class="btn-modo-oscuro" aria-label="Activar modo oscuro"></button>
-    </nav>    
-        <main class="contenido">
-            <div class="caja" style="width: 100%; max-width: 600px;">
-                <h2 class="tituloCaja">Registrar Nuevo Cliente / Deudor</h2>
-                
-                <form id="formAdmin">
-                    <label style="color: #5E2145; font-weight: bold;">Nombre Completo:</label><br>
-                    <input type="text" id="fNombre" class="inputBuscador" placeholder="Ej: Juan Pérez"><br><br>
-
-                    <label style="color: #5E2145; font-weight: bold;">Correo Electrónico:</label><br>
-                    <input type="text" id="fCorreo" class="inputBuscador" placeholder="ejemplo@correo.com"><br><br>
-
-                    <label style="color: #5E2145; font-weight: bold;">Detalle de la Deuda / Mensaje:</label><br>
-                    <textarea id="fMensaje" class="inputBuscador" rows="4" placeholder="Ingresa los detalles aquí..."></textarea><br><br>
-
-                    <button type="submit" class="btnMini" style="background-color: #5E2145; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Guardar Registro</button>
-                    
-                    <p id="mensajeAlerta" style="margin-top: 15px; font-weight: bold; font-family: sans-serif;"></p>
-                </form>
-            </div>
-        </main>
-
     </nav>
 
     <main class="contenido">
+        
+        <div class="caja caja-formulario">
+            <h2 class="tituloCaja">Registrar Nuevo Cliente / Deudor</h2>
+            
+            <form id="formAdmin">
+                <label>Nombre Completo:</label><br>
+                <input type="text" id="fNombre" class="inputBuscador" placeholder="Ej: Juan Pérez"><br><br>
+
+                <label>Correo Electrónico:</label><br>
+                <input type="text" id="fCorreo" class="inputBuscador" placeholder="ejemplo@correo.com"><br><br>
+
+                <label>Detalle de la Deuda / Mensaje:</label><br>
+                <textarea id="fMensaje" class="inputBuscador" rows="4" placeholder="Ingresa los detalles aquí..."></textarea><br><br>
+
+                <button type="submit" class="btnMini btnFormulario">Guardar Registro</button>
+                
+                <p id="mensajeAlerta"></p>
+            </form>
+        </div>
+
+        <br><br>
+
         <h1 class="tituloSeccion">Lista de Fiados</h1>
         <div id="contenedorDeudores"></div>
+
     </main>
+
     <script src="assets/js/modoOscuro.js" defer></script>
 </body>
 </html>

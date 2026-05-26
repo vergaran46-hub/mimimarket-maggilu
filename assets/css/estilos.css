@@ -1298,3 +1298,35 @@ body.dark-mode .tarjetaHistorial {
     background-color: #c82333;
     color: white;
 }
+
+/* =========================================================
+   FORMULARIO DE REGISTRO EN DEUDORES
+   ========================================================= */
+.caja-formulario {
+    width: 100%;
+    max-width: 600px;
+}
+
+#formAdmin label {
+    color: #5E2145;
+    font-weight: bold;
+}
+
+#formAdmin .btnFormulario {
+    padding: 10px 20px;
+    margin-top: 5px;
+}
+
+#mensajeAlerta {
+    margin-top: 15px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+body.dark-mode #formAdmin label {
+    color: #d0a3bf;
+}
+
+body.dark-mode #mensajeAlerta {
+    font-family: sans-serif;
+}
