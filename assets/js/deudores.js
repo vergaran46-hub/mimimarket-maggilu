@@ -1,5 +1,6 @@
 window.onload = () => {
 
+    // Lógica del Menu Hamburguesa
     let btnHamburguesaDash = document.getElementById("btnHamburguesaDash");
     let menuIzquierda = document.querySelector(".menuIzquierda");
 
@@ -9,8 +10,60 @@ window.onload = () => {
         });
     }
 
+    // Cargar la tabla de fiados pendientes
     cargarDeudores();
 
+    // Lógica del formulario Validación, anti-XSS y guardado en localstorage
+    let formAdmin = document.getElementById("formAdmin");
+
+    if (formAdmin) {
+        formAdmin.addEventListener("submit", (evento) => {
+            evento.preventDefault();
+
+            let nombre = document.getElementById("fNombre").value.trim();
+            let correo = document.getElementById("fCorreo").value.trim();
+            let mensaje = document.getElementById("fMensaje").value.trim();
+            let mensajeAlerta = document.getElementById("mensajeAlerta");
+
+            // Regex para validar formato de correo
+            let regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            mensajeAlerta.textContent = "";
+
+            if (nombre === "" || correo === "" || mensaje === "") {
+                mensajeAlerta.style.color = "red";
+                mensajeAlerta.textContent = "Error: Todos los campos son obligatorios.";
+                return;
+            }
+
+            if (!regexCorreo.test(correo)) {
+                mensajeAlerta.style.color = "red";
+                mensajeAlerta.textContent = "Error: Debes ingresar un correo electrónico válido.";
+                return;
+            }
+
+            //  Guardado en localstorage
+            let directorioGuardado = JSON.parse(localStorage.getItem("directorioClientes"));
+            if (directorioGuardado === null) {
+                directorioGuardado = []; 
+            }
+
+            let nuevoCliente = {
+                id: Date.now(), 
+                nombre: nombre,
+                correo: correo,
+                detalle: mensaje,
+                fechaRegistro: new Date().toLocaleDateString()
+            };
+
+            directorioGuardado.push(nuevoCliente);
+            localStorage.setItem("directorioClientes", JSON.stringify(directorioGuardado));
+
+            mensajeAlerta.style.color = "green";
+            mensajeAlerta.textContent = "¡Registro exitoso! Los datos de " + nombre + " han sido guardados en el sistema.";
+
+            formAdmin.reset();
+        });
+    }
 }
 
 function cargarDeudores() {
