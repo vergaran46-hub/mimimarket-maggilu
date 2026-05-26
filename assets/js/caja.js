@@ -1,7 +1,7 @@
 
 let inventario = [];
 let carrito = [];
-let metodoPagoActual= "";
+let metodoPagoActual = "";
 
 window.onload = () => {
 
@@ -9,12 +9,12 @@ window.onload = () => {
     let btnHamburguesaDash = document.getElementById("btnHamburguesaDash");
     let menuIzquierda = document.querySelector(".menuIzquierda");
     let contenido = document.querySelector(".contenido");
-    
+
 
     if (btnHamburguesaDash && menuIzquierda) {
         btnHamburguesaDash.addEventListener("click", () => {
-        menuIzquierda.classList.toggle("menu-activo");
-        contenido.classList.toggle("mover-derecha"); 
+            menuIzquierda.classList.toggle("menu-activo");
+            contenido.classList.toggle("mover-derecha");
         });
     }
 
@@ -25,11 +25,11 @@ window.onload = () => {
     if (inventarioGuardado != null) {
         inventario = inventarioGuardado;
     } else {
-        inventario = inventarioBase;
+        inventario = [];
     }
 
     let tablaInventario = document.getElementById("tablaInventario");
-    
+
     if (tablaInventario) {
         let textoGuardado = localStorage.getItem("boletaTemporal");
         let carritoGuardado = JSON.parse(textoGuardado);
@@ -42,6 +42,25 @@ window.onload = () => {
 
         cargarCatalogo();
         actualizarBoleta();
+
+        // Buscador en tiempo real: filtra el catálogo mientras el usuario escribe
+        let inputBuscador = document.getElementById("iBuscador");
+        if (inputBuscador) {
+            inputBuscador.addEventListener("input", function () {
+                let textoBusqueda = inputBuscador.value.trim().toLowerCase();
+
+                if (textoBusqueda === "") {
+                    // Si el campo está vacío, mostrar todo el inventario
+                    cargarCatalogo();
+                } else {
+                    // Filtrar productos cuyo nombre contenga el texto ingresado
+                    let productosFiltrados = inventario.filter(function (producto) {
+                        return producto.nombre.toLowerCase().indexOf(textoBusqueda) !== -1;
+                    });
+                    cargarCatalogo(productosFiltrados);
+                }
+            });
+        }
 
         let btnFinalizar = document.getElementById("btnFinalizar");
         if (btnFinalizar) {
@@ -79,10 +98,10 @@ window.onload = () => {
                     if (deudoresGuardados == null) {
                         deudoresGuardados = [];
                     }
-                    
+
                     deudoresGuardados.push(registroDeuda);
                     localStorage.setItem("listaDeudores", JSON.stringify(deudoresGuardados));
-                    
+
                     alert("Fiado registrado a nombre de: " + nombreCliente);
 
                 } else {
@@ -119,28 +138,39 @@ window.onload = () => {
     }
 };
 
-function cargarCatalogo() {
+// listaParaMostrar es opcional: si no se pasa, se muestra todo el inventario
+function cargarCatalogo(listaParaMostrar) {
     let tablaInventario = document.getElementById("tablaInventario");
     if (!tablaInventario) return;
 
+    // Si no se recibe un arreglo filtrado, usar el inventario completo
+    if (listaParaMostrar == null) {
+        listaParaMostrar = inventario;
+    }
+
     tablaInventario.textContent = "";
 
-    inventario.forEach((producto, index) => {
+    listaParaMostrar.forEach(function (producto) {
+        // Obtener el índice real en el arreglo inventario para agregar al carrito
+        let indexReal = inventario.indexOf(producto);
+
         let tr = document.createElement("tr");
 
         let tdNombre = document.createElement("td");
         tdNombre.textContent = producto.nombre;
-        
+
         let tdPrecio = document.createElement("td");
         tdPrecio.textContent = "$" + producto.precio;
-        
+
         let tdCant = document.createElement("td");
         tdCant.textContent = producto.cantidad;
-        
+
         let tdBtn = document.createElement("td");
         let btn = document.createElement("button");
         btn.textContent = "+";
-        btn.addEventListener("click", () => agregarAlCarrito(index));
+        btn.addEventListener("click", function () {
+            agregarAlCarrito(indexReal);
+        });
         tdBtn.appendChild(btn);
 
         tr.appendChild(tdNombre);

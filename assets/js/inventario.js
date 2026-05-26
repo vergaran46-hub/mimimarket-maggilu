@@ -42,13 +42,24 @@ function crearProducto() {
         return;
     }
 
-    let nuevoProducto = {
-        nombre: nombre,
-        precio: precioNumero,
-        cantidad: stockNumero
-    };
+    // Buscar si ya existe un producto con el mismo nombre (sin importar mayúsculas/minúsculas)
+    let indiceExistente = listaProductos.findIndex(function (producto) {
+        return producto.nombre.toLowerCase() === nombre.toLowerCase();
+    });
 
-    listaProductos.push(nuevoProducto);
+    if (indiceExistente !== -1) {
+        // El producto ya existe: sumar stock y actualizar precio
+        listaProductos[indiceExistente].cantidad = listaProductos[indiceExistente].cantidad + stockNumero;
+        listaProductos[indiceExistente].precio = precioNumero;
+    } else {
+        // El producto no existe: crearlo normalmente
+        let nuevoProducto = {
+            nombre: nombre,
+            precio: precioNumero,
+            cantidad: stockNumero
+        };
+        listaProductos.push(nuevoProducto);
+    }
 
     guardarProductos();
 
