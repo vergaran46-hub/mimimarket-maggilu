@@ -113,10 +113,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let btnHamburguesaDash = document.getElementById("btnHamburguesaDash");
     let menuIzquierda = document.querySelector(".menuIzquierda");
+    let contenido = document.querySelector(".contenido");
 
     if (btnHamburguesaDash && menuIzquierda) {
-        btnHamburguesaDash.addEventListener("click", function () {
-            menuIzquierda.classList.toggle("menu-activo");
+        btnHamburguesaDash.addEventListener("click", () => {
+        menuIzquierda.classList.toggle("menu-activo");
+        contenido.classList.toggle("mover-derecha"); 
         });
     }
 });

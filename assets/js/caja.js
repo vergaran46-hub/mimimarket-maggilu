@@ -1,11 +1,3 @@
-let inventarioBase = [
-    { nombre: "Arroz", precio: 1350, cantidad: 5 },
-    { nombre: "Aceite", precio: 1000, cantidad: 5},
-    { nombre: "Coca cola cero", precio: 1200, cantidad: 5 },
-    { nombre: "Marraqueta", precio: 100, cantidad: 5 },
-    { nombre: "Papas Fritas", precio: 500, cantidad: 5 },
-    { nombre: "Hallulla", precio: 200, cantidad: 5 }
-];
 
 let inventario = [];
 let carrito = [];
@@ -16,10 +8,13 @@ window.onload = () => {
     // Lógica del Menu Hamburguesa
     let btnHamburguesaDash = document.getElementById("btnHamburguesaDash");
     let menuIzquierda = document.querySelector(".menuIzquierda");
+    let contenido = document.querySelector(".contenido");
+    
 
     if (btnHamburguesaDash && menuIzquierda) {
         btnHamburguesaDash.addEventListener("click", () => {
-            menuIzquierda.classList.toggle("menu-activo");
+        menuIzquierda.classList.toggle("menu-activo");
+        contenido.classList.toggle("mover-derecha"); 
         });
     }
 

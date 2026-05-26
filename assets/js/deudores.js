@@ -3,10 +3,12 @@ window.onload = () => {
     // Lógica del Menu Hamburguesa
     let btnHamburguesaDash = document.getElementById("btnHamburguesaDash");
     let menuIzquierda = document.querySelector(".menuIzquierda");
+    let contenido = document.querySelector(".contenido");
 
-    if(btnHamburguesaDash && menuIzquierda) {
+    if (btnHamburguesaDash && menuIzquierda) {
         btnHamburguesaDash.addEventListener("click", () => {
-            menuIzquierda.classList.toggle("menu-activo");
+        menuIzquierda.classList.toggle("menu-activo");
+        contenido.classList.toggle("mover-derecha");
         });
     }
 
