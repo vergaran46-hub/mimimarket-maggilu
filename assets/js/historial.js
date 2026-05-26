@@ -1,4 +1,14 @@
 window.onload = () => {
+    // Activar el menú hamburguesa
+    let btnHamburguesaDash = document.getElementById("btnHamburguesaDash");
+    let menuIzquierda = document.querySelector(".menuIzquierda");
+
+    if (btnHamburguesaDash && menuIzquierda) {
+        btnHamburguesaDash.addEventListener("click", () => {
+            menuIzquierda.classList.toggle("menu-activo");
+        });
+    }
+
     cargarHistorial();
 }
 

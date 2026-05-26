@@ -12,11 +12,8 @@ let carrito = [];
 let metodoPagoActual= "";
 
 window.onload = () => {
- HEAD
 
- HEAD
     // 1. Lógica del Menú Hamburguesa)
-
     let btnHamburguesaDash = document.getElementById("btnHamburguesaDash");
     let menuIzquierda = document.querySelector(".menuIzquierda");
 
@@ -63,11 +60,8 @@ window.onload = () => {
     }    
     }
 
- HEAD
- HEAD
+    
     // 2. Lógica del Punto de Venta / Boleta 
-
-
     let inventarioGuardado = JSON.parse(localStorage.getItem("inventarioMimi"));
 
     if (inventarioGuardado != null) {

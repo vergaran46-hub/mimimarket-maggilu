@@ -1091,46 +1091,41 @@ body.dark-mode .aviso-sin-resultados {
 
 
 /* =========================================================
- HEAD
   MENÚ HAMBURGUESA PARA EL PANEL DE ADMINISTRACIÓN 
 ========================================================= */
 
 .btn-hamburguesa-dash {
-    display: none; 
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background-color: #5E2145;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    font-size: 22px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 2001; 
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.menuIzquierda {
+    left: -260px;
+    transition: left 0.3s ease;
+    z-index: 2000;
+}
+
+.menuIzquierda.menu-activo {
+    left: 0;
+}
+
+.contenido {
+    margin-left: 0 !important; 
+    padding-top: 70px !important; 
 }
 
 @media screen and (max-width: 768px) {
-    .btn-hamburguesa-dash {
-        display: block;
-        position: fixed;
-        top: 15px;
-        left: 15px;
-        background-color: #5E2145;
-        color: white;
-        border: none;
-        padding: 8px 14px;
-        font-size: 22px;
-        border-radius: 5px;
-        cursor: pointer;
-        z-index: 2001; 
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-    }
-
-    .menuIzquierda {
-        left: -260px;
-        transition: left 0.3s ease;
-        z-index: 2000;
-    }
-
-    .menuIzquierda.menu-activo {
-        left: 0;
-    }
-
-    .contenido {
-        margin-left: 0 !important; 
-        padding-top: 70px !important; 
-    }
-
     .division {
         flex-direction: column;
         gap: 20px;
