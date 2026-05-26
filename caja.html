@@ -61,12 +61,12 @@
                 <h3 class="totalTexto">Total a Pagar: $<span id="totalPagar">0</span></h3>
                 <h3 class="metodoPago">Metodo de Pago: <span id="textoMetodo" style="color: #5E2145;"></span></h3>
 
-                <button onclick="vaciarBoleta()" class="btnMini" style="background-color: #cc0000;">Vaciar Boleta</button>
+                <button id="btnVaciar" class="btnMini" style="background-color: #cc0000;">Vaciar Boleta</button>
                 <button id="btnFinalizar" class="btnMini">Finalizar venta</button>
 
-                <button onclick="cambiarMetodo('Efectivo')" class="btnMini">Efectivo</button>
-                <button onclick="cambiarMetodo('Tarjeta')" class="btnMini">Tarjeta</button>
-                <button onclick="cambiarMetodo('Fiado')" class="btnMini">Fiado</button>
+                <button id="btnEfectivo" class="btnMini">Efectivo</button>
+                <button id="btnTarjeta" class="btnMini">Tarjeta</button>
+                <button id="btnFiado" class="btnMini">Fiado</button>
             </div>
 
         </div>

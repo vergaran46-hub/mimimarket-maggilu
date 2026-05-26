@@ -135,6 +135,36 @@ window.onload = () => {
                 cargarCatalogo();
             });
         }
+
+        // Botón Vaciar Boleta (migrado desde onclick en HTML)
+        let btnVaciar = document.getElementById("btnVaciar");
+        if (btnVaciar) {
+            btnVaciar.addEventListener("click", function () {
+                vaciarBoleta();
+            });
+        }
+
+        // Botones de método de pago (migrados desde onclick en HTML)
+        let btnEfectivo = document.getElementById("btnEfectivo");
+        if (btnEfectivo) {
+            btnEfectivo.addEventListener("click", function () {
+                cambiarMetodo("Efectivo");
+            });
+        }
+
+        let btnTarjeta = document.getElementById("btnTarjeta");
+        if (btnTarjeta) {
+            btnTarjeta.addEventListener("click", function () {
+                cambiarMetodo("Tarjeta");
+            });
+        }
+
+        let btnFiado = document.getElementById("btnFiado");
+        if (btnFiado) {
+            btnFiado.addEventListener("click", function () {
+                cambiarMetodo("Fiado");
+            });
+        }
     }
 };
 
