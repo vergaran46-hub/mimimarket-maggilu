@@ -10,7 +10,7 @@ window.onload = (e) => {
         let vUsuario = iUsuario.value;
         let vClave = iClave.value;
 
-        if(vUsuario === "miriam" && vClave === "caja2026") {
+        if(vUsuario === "admin" && vClave === "123456") {
             window.location.href = "caja.html";
         } else {
             mensajeGeneral.innerText = "Usuario o Contraseña incorrectos"
