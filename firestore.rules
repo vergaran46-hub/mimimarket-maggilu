@@ -1,0 +1,57 @@
+rules_version = '2';
+
+// ============================================================
+// REGLAS DE SEGURIDAD - MIMImarket
+// ============================================================
+// Regla base: solo usuarios autenticados con Firebase Auth
+// pueden leer o escribir cualquier documento. Se rechaza
+// cualquier acceso anónimo (request.auth == null).
+//
+// Estas reglas se configuran en:
+// Firebase Console > Firestore Database > Reglas
+// (o se despliegan con `firebase deploy --only firestore:rules`
+// si usas Firebase CLI)
+// ============================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Productos del inventario
+    match /productos/{productoId} {
+      allow read, write: if request.auth != null;
+    }
+
+    // Historial de ventas
+    match /ventas/{ventaId} {
+      allow read, write: if request.auth != null;
+    }
+
+    // Fiados / deudores
+    match /deudores/{deudorId} {
+      allow read, write: if request.auth != null;
+    }
+
+    // Clientes registrados
+    match /clientes/{clienteId} {
+      allow read, write: if request.auth != null;
+    }
+
+    // Cualquier otra colección no contemplada queda bloqueada
+    // por defecto (denegar todo lo que no se autorizó arriba).
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// Nota (bonus): en este proyecto solo existe una cuenta
+// administradora (la caja del almacén), por lo que no aplica
+// una regla "solo el propietario puede modificar sus propios
+// documentos" (no hay múltiples dueños de datos). Si en el
+// futuro se agregan cuentas por vendedor, se podría granularizar
+// así, por ejemplo, en ventas:
+//
+//   allow write: if request.auth != null
+//                && request.resource.data.vendedorUid == request.auth.uid;
+// ------------------------------------------------------------
