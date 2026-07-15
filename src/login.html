@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Caja - MIMImarket</title>
+    <link href="/assets/css/estilos.css" rel="stylesheet">
+</head>
+<body>
+    <button id="btnModoOscuro" class="btn-modo-oscuro btn-modo-oscuro-flotante" aria-label="Activar modo oscuro"></button>
+    <div class="tarjeta-login">
+        <h2>MIMImarket</h2>
+
+        <label>Correo:</label><br>
+        <input type="email" id="iUsuario" placeholder="admin@mimimarket.cl" autocomplete="username"><br><br>
+
+        <label>Contraseña:</label><br>
+        <input type="password" id="iClave" autocomplete="current-password"><br><br>
+
+        <button id="btnIngresar" class="btn-mimi">Ingresar</button>
+
+        <p id="mensajeGeneral"></p>
+    </div>
+
+    <script type="module" src="/assets/js/script.js"></script>
+    <script type="module" src="/assets/js/modoOscuro.js"></script>
+</body>
+</html>
