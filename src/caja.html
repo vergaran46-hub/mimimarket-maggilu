@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Caja Principal - MIMImarket</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/css/estilos.css" rel="stylesheet">
+</head>
+<body>
+    <button id="btnHamburguesaDash" class="btn-hamburguesa-dash">&#9776;</button>
+
+    <nav class="menuIzquierda">
+        <h2 class="menu"><img src="/img/Logo_MIMImarket-removebg-preview.png" alt="MIMImarket Logo"></h2>
+
+        <ul class="listaMenu">
+            <li><a href="caja.html">Caja Principal</a></li>
+            <li><a href="deudores.html">Deudores</a></li>
+            <li><a href="inventario.html">Inventario</a></li>
+            <li><a href="historial.html">Historial</a></li>
+        </ul>
+        <button id="btnCerrarSesion" class="btnMini" style="width: 90%; margin: 0 auto 10px;">Cerrar sesión</button>
+        <button id="btnModoOscuro" class="btn-modo-oscuro" aria-label="Activar modo oscuro"></button>
+    </nav>
+
+    <main class="contenido">
+        <div id="estadoCaja"></div>
+        <div class="division">
+
+            <div class="caja">
+                <h2 class="tituloCaja">Catalogo rapido</h2>
+                <input type="text" id="iBuscador" placeholder="Buscar Producto" class="inputBuscador"><br><br>
+
+                <table border="1" class="tablaMini">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Agregar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaInventario"></tbody>
+                </table>
+            </div>
+
+            <div class="caja">
+                <h2 class="tituloCaja">Boleta del Cliente</h2>
+
+                <table border="1" class="tablaMini">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaCarrito"></tbody>
+                </table>
+
+                <h3 class="totalTexto">Total a Pagar: $<span id="totalPagar">0</span></h3>
+                <h3 class="metodoPago">Metodo de Pago: <span id="textoMetodo" style="color: #5E2145;"></span></h3>
+
+                <button id="btnVaciar" class="btnMini" style="background-color: #cc0000;">Vaciar Boleta</button>
+                <button id="btnFinalizar" class="btnMini">Finalizar venta</button>
+
+                <button id="btnEfectivo" class="btnMini">Efectivo</button>
+                <button id="btnTarjeta" class="btnMini">Tarjeta</button>
+                <button id="btnFiado" class="btnMini">Fiado</button>
+            </div>
+
+        </div>
+    </main>
+
+    <script type="module" src="/assets/js/caja.js"></script>
+    <script type="module" src="/assets/js/modoOscuro.js"></script>
+</body>
+</html>
