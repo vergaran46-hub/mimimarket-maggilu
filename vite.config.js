@@ -7,6 +7,7 @@ import { resolve } from "path";
 // módulos ES, npm y variables de entorno (import.meta.env).
 export default defineConfig({
   root: "src",
+  envDir: "../",
   publicDir: "../public",
   build: {
     outDir: "../dist",
